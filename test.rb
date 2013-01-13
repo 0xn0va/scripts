@@ -75,6 +75,15 @@ s["cat", "dog"] = "animals"
 puts
 ##########
 
+3.times do 
+	print "ho! "
+end
+
+puts
+
+1.upto(9) do |x|
+	print x, ", "
+end
 
 
 
