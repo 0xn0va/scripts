@@ -37,7 +37,7 @@ class DailyDilbert < FXMainWindow
 
     # Resize main window client area to fit image size
     resize(@imageview.contentWidth, @imageview.contentHeight)
-  end
+  end÷÷
   
   def image_data
     doc = Hpricot(open("http://www.dilbert.com/"))
