@@ -35,6 +35,7 @@ class PasswordGenerator < FXMainWindow
     generateButton.connect(SEL_COMMAND) do
       textArea.removeText(0, textArea.length)
       pwLength = [0, chrTextField.text.to_i].max
+      #raise 'max character is 100' if chrTextField.text > 100 end
       charSet = chooseCharset(@includeSpecialCharacters)
       textArea.appendText(generatePassword(pwLength, charSet))
     end
@@ -46,6 +47,8 @@ class PasswordGenerator < FXMainWindow
     self.connect(SEL_CLIPBOARD_REQUEST) do
       setDNDData(FROM_CLIPBOARD, FXWindow.stringType, Fox.fxencodeStringData(textArea.text))
     end
+
+    
   end
 
   def generatePassword(pwLength, charArray)
